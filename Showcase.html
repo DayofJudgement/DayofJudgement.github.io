@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Here the HTML file starts -->
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Qualifications</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="nheader">
+            <div class="left">
+                <img class="header" src="../images/EMujammami.jpg" alt="Essa Mujammami image" width="150">
+            </div>
+
+            <div class="right">
+                <h1> Science and Experience</h1>
+                <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Essa Mujammami</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- HTML5 Input Form Elements -->
+    <input id="fileupload" type="file" name="fileupload" />
+    <button id="upload-button" onclick="uploadFile()"> Upload </button>
+    <!-- Ajax JavaScript File Upload Logic -->
+    <script>
+        async function uploadFile() {
+            let formData = new FormData();
+            formData.append("file", fileupload.files[0]);
+            await fetch('/upload.php', {
+                method: "POST",
+                body: formData
+            });
+            alert('The file has been uploaded successfully.');
+        }
+    </script>
+
+    <!-- This is the side bar section-->
+
+    <div id="sidebar">
+        <ul class="sideBar_Nav">
+            <li>
+                <form style="display: inline" action="index.html" method="get">
+                    <button class="btn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </form>
+            </li>
+            <li>
+                <form style="display: inline" action="Essa_Mujammami_Resume.html" method="get">
+                    <button class="btn">&nbsp;&nbsp;&nbsp;&nbsp;Resume&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                </form>
+            </li>
+            <li>
+                <form style="display: inline" action="Qualifications.html" method="get">
+                    <button class="btn">Qualifications</button>
+                </form>
+            </li>
+            <li>
+                <form style="display: inline" action="Showcase.html" method="get">
+                    <button class="btn">&nbsp;&nbsp;&nbsp;Showcase&nbsp;&nbsp;&nbsp;</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html >
